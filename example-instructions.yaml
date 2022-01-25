@@ -1,0 +1,3 @@
+call: Rscript run_this.R --help
+output: /home/giuliano/output
+log: /home/rstudio/simulations/mylog.log

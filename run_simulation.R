@@ -26,11 +26,12 @@ if (!("output" %in% params)) {
   stop(msg)
 }
 
+logger::log_threshold(logger::DEBUG)
+
 if ("log" %in% params) {
   logfile <- instructions[['log']]
   if (file.exists(logfile)) file.remove(logfile)
   logger::log_appender(logger::appender_tee(logfile))
-  logger::log_threshold(logger::DEBUG)
   msg <- paste0("Logging into file: ", logfile)
   logger::log_info(msg)
 }

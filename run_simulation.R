@@ -23,11 +23,6 @@ if (!("call" %in% params)) {
   stop(msg)
 }
 
-if (!("output" %in% params)) {
-  msg <- "Mandatory instruction missing: 'output'"
-  stop(msg)
-}
-
 logger::log_threshold(logger::DEBUG)
 
 if ("log" %in% params) {

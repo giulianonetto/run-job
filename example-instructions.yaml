@@ -1,2 +1,2 @@
-call: R -e "print("Hello world!")"
+call: Rscript --help
 log: ~/mylog.log

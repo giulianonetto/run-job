@@ -1,7 +1,9 @@
+#!/usr/bin/env Rscript
+
 'Run simulation.
 
 Usage:
-  run_simulation.R --instructions=<instructions-file> [--log=<log-file>]
+  run_simulation.R --instructions=<instructions-file>
   run_simulation.R (-h | --help)
   run_simulation.R --version
 

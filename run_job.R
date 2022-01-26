@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-'Run simulation.
+'Run job.
 
 Usage:
   run_job.R --instructions=<instructions-file>
@@ -10,7 +10,7 @@ Usage:
 Options:
   -h --help     Show this screen.
   --version     Show version.
-  --instructions=<file-path>  Path for yaml file with simulation instructions.
+  --instructions=<file-path>  Path for yaml file with job instructions.
 
 ' -> doc
 
@@ -23,6 +23,11 @@ if (!("call" %in% params)) {
   stop(msg)
 }
 
+if (!("base-image" %in% params)) {
+  msg <- "Mandatory instruction missing: 'base-image'"
+  stop(msg)
+}
+
 logger::log_threshold(logger::DEBUG)
 
 if ("log" %in% params) {
@@ -32,6 +37,12 @@ if ("log" %in% params) {
   msg <- paste0("Logging into file: ", logfile)
   logger::log_info(msg)
 }
+
+msg <- paste0(
+  "Base docker image:\n",
+  instructions[['base-image']]
+)
+logger::log_info(msg)
 
 msg <- paste0(
   "Running script call:\n",

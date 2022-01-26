@@ -1,2 +1,2 @@
-call: Rscript --help
+call: echo $PATH
 log: ~/mylog.log

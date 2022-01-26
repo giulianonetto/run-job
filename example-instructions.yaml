@@ -1,2 +1,3 @@
-call: echo $PATH
+call: Rscript testing.R
 log: ~/mylog.log
+base-image: "giulianocruz/rstudio:0.0.1"
